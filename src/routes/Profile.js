@@ -49,14 +49,17 @@ const Profile = ({userObj, refreshUser, setInit}) => {
             refreshUser();
         }
     };
-    return (
-        <>
-        <form onSubmit={onSubmit}>
-            <input type="text" placeholder="이름 표시" value={newDisplayName} onChange={onChange}/>
-            <input type="submit" value="프로파일 갱신" />
-        </form>
+    return (        
+         <div className="container">
+            <form onSubmit={onSubmit} className="profileForm">
+                <input type="text" placeholder="이름 표시" value={newDisplayName} onChange={onChange} autoFocus className="formInput"/>
+                <input type="submit" value="프로파일 갱신" className="formBtn" style={{marginTop: 10,}}/>
+            </form>
             <button onClick={onLogOutClick}>Log Out</button>
-        </>
+            <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
+                Log Out
+            </span>
+        </div>
     );
 };
 
